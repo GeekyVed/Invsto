@@ -150,7 +150,7 @@ Unit tests are written using Python's `unittest` framework to validate:
 
 Run the tests with:
 ```bash
-python -m unittest discover -s tests
+pytest tests/ --cov=app                                         
 ```
 
 ---
@@ -175,23 +175,19 @@ The FastAPI app will be accessible at `http://localhost:8000`.
 
 ## Screenshots
 
+![Image](https://github.com/user-attachments/assets/15e42539-38e5-44cd-a0b6-1ad95b3939ad)
+
 ### 1. Screenshot of the `/data` Endpoint Response
-![Data Endpoint Screenshot](./path/to/screenshot_data.png)
+![Image](https://github.com/user-attachments/assets/30caf672-4631-441f-9118-dac8ff71db94)
 
 ### 2. Screenshot of the `/strategy/performance` Endpoint Response
-![Strategy Performance Screenshot](./path/to/screenshot_performance.png)
+![Image](https://github.com/user-attachments/assets/ef7f926f-cead-4cff-845b-6523f6225cb0)
 
 ### 3. Screenshot of the Unit Test Results
-![Unit Test Results Screenshot](./path/to/screenshot_tests.png)
+![Image](https://github.com/user-attachments/assets/743d9a59-67b5-4925-b664-d62c2777c6d1)
 
 ---
 
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-Thank you for reviewing the Invsto assignment! Feel free to reach out for any questions or clarifications.
-
-```
