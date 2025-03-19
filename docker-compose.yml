@@ -1,0 +1,33 @@
+services:
+  invsto-project-fastapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"  # Expose port 8000 for FastAPI app
+    environment:
+      - ENV_VAR_NAME=value  # Replace with actual environment variables
+    volumes:
+      - .:/app  # Mount current directory to /app in the container (optional)
+    networks:
+      - invsto-network  # Optional network configuration (can remove if not needed)
+    depends_on:
+      - db  # If your FastAPI app depends on a database service
+
+  db:
+    image: postgres:13  # Replace with your database image if needed
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: invsto_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - invsto-network  # Ensure db is on the same network as your FastAPI app
+
+networks:
+  invsto-network:  # Define custom network (optional)
+    driver: bridge
+
+volumes:
+  postgres_data:  # Named volume for database persistence (optional)
